@@ -44,6 +44,6 @@ public class AtlasAngularExcursionTest extends AvatarAngularExcursionTest
    @Override
    public String getSimpleRobotName()
    {
-      return "atlas";
+      return "us/ihmc/atlas";
    }
 }

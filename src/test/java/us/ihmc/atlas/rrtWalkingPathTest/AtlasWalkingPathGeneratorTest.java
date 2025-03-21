@@ -20,7 +20,7 @@ public class AtlasWalkingPathGeneratorTest extends AvatarWalkingPathGeneratorTes
    @Override
    public String getSimpleRobotName()
    {
-      return "atlas";
+      return "us/ihmc/atlas";
    }
 
    @Override
