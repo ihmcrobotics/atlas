@@ -8,12 +8,12 @@ import us.ihmc.atlas.AtlasRobotModel;
 import us.ihmc.atlas.AtlasRobotVersion;
 import us.ihmc.avatar.drcRobot.DRCRobotModel;
 import us.ihmc.avatar.drcRobot.RobotTarget;
-import us.ihmc.avatar.obstacleCourseTests.DRCObstacleCoursePlatformTest;
+import us.ihmc.avatar.obstacleCourseTests.AvatarObstacleCoursePlatformTest;
 import us.ihmc.simulationConstructionSetTools.tools.CITools;
 import us.ihmc.simulationconstructionset.UnreasonableAccelerationException;
 import us.ihmc.simulationconstructionset.util.simulationRunner.BlockingSimulationRunner.SimulationExceededMaximumTimeException;
 
-public class AtlasObstacleCoursePlatformTest extends DRCObstacleCoursePlatformTest
+public class AtlasObstacleCoursePlatformTest extends AvatarObstacleCoursePlatformTest
 {
 
    @Override
