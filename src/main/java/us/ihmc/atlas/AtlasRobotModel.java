@@ -24,6 +24,7 @@ import us.ihmc.avatar.drcRobot.DRCRobotModel;
 import us.ihmc.avatar.drcRobot.RobotTarget;
 import us.ihmc.avatar.drcRobot.RobotVersion;
 import us.ihmc.avatar.handControl.packetsAndConsumers.HandModel;
+import us.ihmc.avatar.initialSetup.HumanoidRobotInitialSetup;
 import us.ihmc.avatar.initialSetup.RobotInitialSetup;
 import us.ihmc.avatar.kinematicsSimulation.SimulatedHandKinematicController;
 import us.ihmc.avatar.networkProcessor.time.DRCROSAlwaysZeroOffsetPPSTimestampOffsetProvider;
@@ -42,6 +43,7 @@ import us.ihmc.commons.Conversions;
 import us.ihmc.communication.HumanoidControllerAPI;
 import us.ihmc.communication.controllerAPI.RobotLowLevelMessenger;
 import us.ihmc.euclid.transform.RigidBodyTransform;
+import us.ihmc.euclid.tuple3D.Vector3D;
 import us.ihmc.footstepPlanning.AStarBodyPathPlannerParameters;
 import us.ihmc.footstepPlanning.AStarBodyPathPlannerParametersBasics;
 import us.ihmc.footstepPlanning.graphSearch.parameters.DefaultFootstepPlannerParametersBasics;
@@ -359,6 +361,21 @@ public class AtlasRobotModel implements DRCRobotModel
    public RobotInitialSetup<HumanoidFloatingRootJointRobot> getDefaultRobotInitialSetup()
    {
       return new AtlasSimInitialSetup(getRobotDefinition(), getJointMap());
+   }
+
+   @Override
+   public HumanoidRobotInitialSetup getSimulatedRobotInitialSetup()
+   {
+      return new AtlasSimInitialSetup(getRobotDefinition(), getJointMap());
+   }
+
+   public RobotInitialSetup<HumanoidFloatingRootJointRobot> getSimulatedRobotInitialSetup(double groundHeight, double initialYaw, double x, double y, double z)
+   {
+      RobotInitialSetup<HumanoidFloatingRootJointRobot> robotInitialSetup = getSimulatedRobotInitialSetup();
+      robotInitialSetup.setInitialGroundHeight(groundHeight);
+      robotInitialSetup.setInitialYaw(initialYaw);
+      robotInitialSetup.setOffset(new Vector3D(x, y, z));
+      return robotInitialSetup;
    }
 
    @Override

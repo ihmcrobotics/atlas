@@ -34,7 +34,7 @@ public class AtlasFootstepPlanningTimingTest
       request.setStartFootPoses(planningModule.getFootstepPlannerParameters().getIdealFootstepWidth(), initialMidFootPose);
       request.setGoalFootPoses(planningModule.getFootstepPlannerParameters().getIdealFootstepWidth(), goalMidFootPose);
       request.setRequestedInitialStanceSide(RobotSide.LEFT);
-      request.setHeightMapData(HeightMapMessageTools.unpackMessage(PlanarRegionToHeightMapConverter.convertFromPlanarRegionsToHeightMap(dataSet.getPlanarRegionsList())));
+      request.setHeightMapData(HeightMapMessageTools.unpackMessageToHeightMapData(PlanarRegionToHeightMapConverter.convertFromPlanarRegionsToHeightMap(dataSet.getPlanarRegionsList())));
       request.setPlanBodyPath(false);
       request.setAbortIfBodyPathPlannerFails(false);
 
