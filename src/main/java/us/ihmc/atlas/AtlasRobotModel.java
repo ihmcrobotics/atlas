@@ -364,21 +364,6 @@ public class AtlasRobotModel implements DRCRobotModel
    }
 
    @Override
-   public HumanoidRobotInitialSetup getSimulatedRobotInitialSetup()
-   {
-      return new AtlasSimInitialSetup(getRobotDefinition(), getJointMap());
-   }
-
-   public RobotInitialSetup<HumanoidFloatingRootJointRobot> getSimulatedRobotInitialSetup(double groundHeight, double initialYaw, double x, double y, double z)
-   {
-      RobotInitialSetup<HumanoidFloatingRootJointRobot> robotInitialSetup = getSimulatedRobotInitialSetup();
-      robotInitialSetup.setInitialGroundHeight(groundHeight);
-      robotInitialSetup.setInitialYaw(initialYaw);
-      robotInitialSetup.setOffset(new Vector3D(x, y, z));
-      return robotInitialSetup;
-   }
-
-   @Override
    public AtlasContactPointParameters getContactPointParameters()
    {
       return contactPointParameters;
